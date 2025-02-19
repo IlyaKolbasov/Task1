@@ -27,6 +27,7 @@ pipeline {
 
                                  execCommand: 'cp /root/tomcat/apache-tomcat-9.0.100/webapps/target/kolbasov-task.war /root/tomcat/apache-tomcat-9.0.100/webapps/'
 
+                            )
                         ],
                         usePromotionTimestamp: false,
                         useWorkspaceInPromotion: false,
