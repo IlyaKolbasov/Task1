@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            sh 'cd /'
+
                 // Используем SSH-учетные данные для подключения к VPS
                 sshPublisher(publishers: [
                     sshPublisherDesc(
@@ -23,7 +23,8 @@ pipeline {
                         transfers: [
                             sshTransfer(
                                 sourceFiles: 'target/kolbasov-task.war',
-                                remoteDirectory: '/opt/tomcat/apache-tomcat-9.0.100/webapps/', // Путь на VPS
+
+                                remoteDirectory: '../opt/tomcat/apache-tomcat-9.0.100/webapps/', // Путь на VPS
                                 /* execCommand: 'systemctl restart tomcat'  */// Команда для перезапуска Tomcat
                             )
                         ],
