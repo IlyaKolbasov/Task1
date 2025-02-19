@@ -18,7 +18,7 @@ pipeline {
                 // Используем SSH-учетные данные для подключения к VPS
                 sshPublisher(publishers: [
                     sshPublisherDesc(
-                        configName: 'vps-key',
+                        configName: 'server',
                         transfers: [
                             sshTransfer(
                                 sourceFiles: 'target/kolbasov-task.war',
