@@ -26,8 +26,7 @@ pipeline {
                                 remoteDirectory: 'tomcat/apache-tomcat-9.0.100/webapps/',
 
                                  execCommand: 'cp /root/tomcat/apache-tomcat-9.0.100/webapps/target/kolbasov-task.war /root/tomcat/apache-tomcat-9.0.100/webapps/'
-                                /* execCommand: 'systemctl restart tomcat'  */// Команда для перезапуска Tomcat
-                            )
+
                         ],
                         usePromotionTimestamp: false,
                         useWorkspaceInPromotion: false,
