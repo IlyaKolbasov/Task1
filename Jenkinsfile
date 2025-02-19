@@ -24,7 +24,7 @@ pipeline {
                             sshTransfer(
                                 sourceFiles: 'target/kolbasov-task.war',
                                 remoteDirectory: 'tomcat/apache-tomcat-9.0.100/webapps/',
-                                 execCommand: 'mv kolbasov-task.war ../'
+
                                  execCommand: 'cp kolbasov-task.war /root/tomcat/apache-tomcat-9.0.100/webapps/'
                                 /* execCommand: 'systemctl restart tomcat'  */// Команда для перезапуска Tomcat
                             )
@@ -34,6 +34,7 @@ pipeline {
 
                     )
                 ])
+                sshCommand remote: 'server', command: 'cp /root/tomcat/apache-tomcat-9.0.100/webapps/target/kolbasov-task.war /root/tomcat/apache-tomcat-9.0.100/webapps/'
             }
         }
     }
