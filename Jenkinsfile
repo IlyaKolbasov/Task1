@@ -22,7 +22,7 @@ pipeline {
                         configName: 'server',
                         transfers: [
                             sshTransfer(
-                                sourceFiles: 'target/kolbasov-task.war',
+                                sourceFiles: 'kolbasov-task.war',
                                 remoteDirectory: '/tomcat/apache-tomcat-9.0.100/webapps/', // Путь на VPS
                                 /* execCommand: 'systemctl restart tomcat'  */// Команда для перезапуска Tomcat
                             )
